@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Dynamic Redirector</p>
+          <h1>Rules</h1>
+        </div>
+        <div class="stats">
+          <span id="rule-count">0 rules</span>
+          <span id="enabled-count">0 active</span>
+        </div>
+      </section>
+
+      <section class="composer card">
+        <div class="field-group">
+          <label for="from">From URL</label>
+          <input type="text" id="from" value="https://" placeholder="https://site.com/path" />
+        </div>
+        <div class="field-group">
+          <label for="to">To base URL</label>
+          <input type="text" id="to" value="https://" placeholder="https://localhost:3000" />
+        </div>
+        <label class="checkbox-row">
+          <input type="checkbox" id="match-domain" />
+          <span>Redirect any path on this domain</span>
+        </label>
+        <button id="add" class="icon-button primary" aria-label="Add rule" title="Add rule">
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+      </section>
+
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+      <section id="rules" class="rules"></section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
